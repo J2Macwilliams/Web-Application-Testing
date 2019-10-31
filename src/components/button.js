@@ -3,13 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-font-fize: 1.5rem;
+font-size: 1.5rem;
+background: orange;
+border-radius: 9px;
 `;
 
-const button = () => {
+const button = (props) => {
     return (
         <div>
-            <Button >{props.name}</Button>
+            <Button onClick={props.onClick}>{props.name}</Button>
         </div>
     )
 }
