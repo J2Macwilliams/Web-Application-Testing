@@ -7,10 +7,11 @@ import styled from 'styled-components';
 import bgrnd from '../img/giants.jpg';
 
 const Container = styled.div`
-    background-image: url(${bgrnd});
+    background-image: url(${bgrnd} );
     background-size: cover;
     height: 100vh;
     background-position: center;
+    
 
     .board {
         display: flex;
@@ -51,9 +52,9 @@ function Scoreboard() {
            </div>
            <div className="actions">
                 <Btn name={'Ball'} onClick={() => (ball === 4 ) ? setBall(0) : setBall(ball + 1)}/>
-                <Btn name={'Strike'} onClick={() => (strike === 3) ? setStrike(0) : setStrike(strike + 1)}/>
+                <Btn name={'Strike'} onClick={() => (strike === 2) ? setStrike(0) : setStrike(strike + 1)}/>
                 <Btn name={'Hit'} onClick={() => (setStrike(0) || setBall(0))}/>
-                <Btn name={'Foul'} onClick={() => setBall(ball + 1)}/>
+                <Btn name={'Foul'} onClick={() => (strike <= 1) ? setStrike(strike + 1) : null }/>
             </div>
        </Container>
     )
